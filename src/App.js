@@ -3,13 +3,29 @@ import './App.css';
 import { yes, no } from './objects.js';
 
 // - The DOM should first display the `no-image` and `no-statement` an `img` tag and `h1` tag
-function App() {
+
+class App extends React.Component {
+
+  state = {
+    clicked: false,
+    yes: yes,
+    no: no
+  }
+
+  clickHandler = () => {
+    this.setState( {
+      clicked: !this.state.clicked
+    })
+  }
+
+  render () {
   return (
     <div>
-      <h1 onClick={yes["yes-statement"]}> {no["no-statement"]} </h1>;
-      <img className="Drizzy" alt="Drake" src={no["no-image"]} onClick={yes["yes-image"]} />
+    { this.state.clicked ? <h1>{yes["yes-statement"]}</h1>: <h1>{no["no-statement"]}</h1> }
+      <img className="Drizzy" alt="Drake" src={this.state.clicked? yes["yes-image"]: no["no-image"]} onClick={() => this.clickHandler()} />
     </div>
   )
+}
 }
 
 export default App;
