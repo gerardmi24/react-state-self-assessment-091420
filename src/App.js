@@ -18,9 +18,9 @@ clickHandler = () => {
     let isClicked = this.state.clicked
     return (
     <div>
-      <h1> {no["no-statement"]} </h1>;
-      {isClicked? <img onClick={this.clickHandler} src={yes["yes-image"]} />:
-       <img onClick={this.clickHandler} src={no["no-image"]} />
+      
+      {isClicked? <div> <h1> {yes["yes-statement"]} </h1> <img onClick={this.clickHandler} src={yes["yes-image"]} /> </div>:
+       <div> <h1> {no["no-statement"]} </h1> <img onClick={this.clickHandler} src={no["no-image"]} /> </div>
       }
     </div>
     )
