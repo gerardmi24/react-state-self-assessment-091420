@@ -9,9 +9,9 @@ state = {
 }
 
 clickHandler = () => {
-  this.setState = {
+  this.setState( {
     clicked: !this.state.clicked
-  }
+  })
 }
 
   render() {
